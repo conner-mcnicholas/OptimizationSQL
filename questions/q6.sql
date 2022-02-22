@@ -40,7 +40,7 @@ EXPLAIN ANALYZE ...
                                     -> Filter: (Teaching.crsCode is not null)  (cost=10.25 rows=100) (actual time=0.007..0.215 rows=100 loops=1)
                                         -> Table scan on Teaching  (cost=10.25 rows=100) (actual time=0.007..0.194 rows=100 loops=1)
 */
-CREATE TEMP TABLE matstud AS SELECT studId
+CREATE TEMPORARY TABLE matstud AS SELECT studId
 FROM Transcript
 WHERE crsCode IN
 (SELECT crsCode FROM Course WHERE deptId = 'MAT' AND crsCode IN (SELECT crsCode FROM Teaching))
