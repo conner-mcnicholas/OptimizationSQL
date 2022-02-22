@@ -1,7 +1,4 @@
 -- 1. List the name of the student with id equal to v1 (id).
-USE springboardopt;
-SET @v1 = 1612521;
-
 EXPLAIN ANALYZE SELECT name FROM Student WHERE id = @v1;
 ---> Filter: (Student.id = <cache>((@v1)))  (cost=41.00 rows=40) (actual time=0.306..1.199 rows=1 loops=1)
 --  -> Table scan on Student  (cost=41.00 rows=400) (actual time=0.077..1.079 rows=400 loops=1)
