@@ -57,7 +57,7 @@ EXPLAIN ANALYZE...
     -> Covering index scan on matstud using PRIMARY  (cost=2.90 rows=19) (actual time=0.022..0.027 rows=19 loops=1)
     -> Single-row index lookup on Student using PRIMARY (id=matstud.studId)  (cost=0.63 rows=1) (actual time=0.004..0.004 rows=1 loops=19)
 '*/
---Total time decreased from 3.8 to .047 after creating temporary table for both subqueries and adding the studid col and Student.id as PRIMARY KEYs
+--Total time decreased from 3.8 to .1 after creating temporary table for both subqueries and adding the studid col and Student.id as PRIMARY KEYs
 
 SELECT name FROM Student, matstud WHERE Student.id = matstud.studId;
 /*
